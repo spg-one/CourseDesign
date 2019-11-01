@@ -1,0 +1,24 @@
+choice
+	prompt  "TQ2440 Camera Type"
+	depends on VIDEO_DEV && ARCH_S3C2440
+	default TQ2440_camera
+
+config TQ2440_camera
+	bool "OV9650 and AV camera"
+	---help---
+	  Support for OV9650 and AV camera.
+
+	  For more information see: <http://www.embedsky.net/>
+
+config  VIDEO_OV9650
+	bool "OV9650 Drivers"
+
+endchoice
+
+config TQ2440_camera_DEBUG
+	bool "Enable ov9650 and av camera debug infomation."
+	depends on TQ2440_camera
+	default n
+	---help---
+
+
